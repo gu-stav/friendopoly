@@ -41,7 +41,7 @@ const Card = ({ question, index, length, continueStack, setStackCredit, ...rest 
 						continueStack();
 					}}
 					>
-              Next question
+              Nächste Frage
 					</Button>
 				) : (
 					<Fragment>

@@ -40,9 +40,13 @@ const Stack = ({ cards = [] }) => {
 				<div class={container}>
 					{hasNext === true ? (
 						<Fragment>
-							{store.map((question, index) => (
-								<Card index={cards.length - store.length} length={cards.length} key={`card-${index}`} continueStack={continueStack} setStackCredit={setStackCredit} question={question} />
-							))}
+							{store.map(question => {
+								const index = cards.length - store.length;
+
+								return (
+									<Card index={index} length={cards.length} key={`card-${question[0]}`} continueStack={continueStack} setStackCredit={setStackCredit} question={question} />
+								);
+							})}
 						</Fragment>
 					) : (
 						<Button type="button" onClick={event => {
