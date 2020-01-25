@@ -1,0 +1,78 @@
+.card {
+  background-color: white;
+  border: 2px solid #2d862d;
+  border-radius: 0.75rem;
+  color: #2d862d;
+  display: flex;
+  flex-direction: column;
+  left: -0.75rem;
+  min-height: 30rem;
+  padding: 4rem 4rem 2rem 4rem;
+  position: absolute;
+  text-align: center;
+  top: 0.75rem;
+  width: 100%;
+}
+
+.card:nth-child(1) {
+  background-color: #2d862d;
+  color: white;
+  left: 0;
+  top: 0;
+  z-index: 3;
+}
+
+.card:nth-child(2) {
+  left: -0.25rem;
+  top: 0.25rem;
+  z-index: 2;
+}
+
+.card:nth-child(3) {
+  left: -0.3rem;
+  top: 0.3rem;
+  z-index: 1;
+}
+
+.card:nth-child(4) {
+  left: -0.5rem;
+  top: 0.5rem;
+  z-index: 1;
+}
+
+.meta {
+  background-color: white;
+  color: green;
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+}
+
+.metaContainer {
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.question {
+  display: flex;
+  flex-direction: column;
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.answer {
+  font-style: italic;
+}
+
+.footer {
+  justify-self: flex-end;
+  margin-top: auto;
+}
+
+.footer > * + * {
+  margin-left: 1.5rem;
+}

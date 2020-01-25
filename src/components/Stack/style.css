@@ -1,0 +1,11 @@
+.stack {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container {
+  position: relative;
+  width: 50%;
+}
