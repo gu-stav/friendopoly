@@ -1,12 +1,20 @@
 .card {
   background-color: black;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.2),
+    transparent 1px,
+    transparent 1px,
+    transparent 10px
+  );
   border: 1px solid rgb(100, 100, 100);
   border-radius: 0.75rem;
-  color: #2d862d;
+  color: #5abba7;
   display: flex;
   flex-direction: column;
+  height: 25rem;
   left: 0;
-  min-height: 30rem;
+  overflow: hidden;
   padding: 4rem 4rem 2rem 4rem;
   position: absolute;
   text-align: center;
@@ -15,8 +23,8 @@
 }
 
 .card:nth-child(1) {
-  border-color: #2d862d;
-  background-color: #2d862d;
+  border-color: #5abba7;
+  background-color: #5abba7;
   color: white;
   top: 0;
   z-index: 3;
@@ -38,23 +46,20 @@
 }
 
 .meta {
-  background-color: black;
-  color: white;
-  display: inline-block;
-  letter-spacing: 0.1rem;
-  padding: 0.25rem 0.5rem;
+  color: black;
+  display: block;
+  font-family: AkzidenzGrotestkMedium, Arial, sans-serif;
+  letter-spacing: 0.05rem;
+  padding: 0.5rem 1rem;
 }
 
 .metaContainer {
   font-size: 0.85rem;
   font-weight: 700;
-  margin-bottom: 1rem;
   text-transform: uppercase;
 }
 
 .question {
-  display: flex;
-  flex: 1 0 auto;
   flex-direction: column;
   font-size: 2.5rem;
   font-weight: 900;
@@ -62,6 +67,16 @@
   line-height: 1;
   margin-bottom: 2rem;
   margin-top: 0;
+}
+
+.questionText {
+  background: black;
+  box-decoration-break: clone;
+  color: white;
+  display: inline;
+  font-family: AkzidenzGrotestkMedium, Arial, sans-serif;
+  line-height: 1.45;
+  padding: 0.2rem 1rem;
 }
 
 .answer {
@@ -74,13 +89,22 @@
 }
 
 .source {
-  display: block;
+  display: inline-flex;
   font-size: 0.95rem;
   font-style: italic;
   margin-top: 1.5rem;
+  padding: 0.25rem;
+}
+
+.source::before {
+  color: black;
+  content: '—';
+  font-weight: 700;
+  margin-right: 0.5rem;
 }
 
 .footer {
+  background-color: transparent;
   justify-self: flex-end;
   margin-top: auto;
   padding-top: 2rem;

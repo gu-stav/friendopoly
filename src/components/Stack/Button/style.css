@@ -1,21 +1,33 @@
 .button {
-  background: transparent;
-  border: 2px solid white;
+  background: white;
+  border: 2px solid #5abba7;
   border-radius: 0.35rem;
-  color: white;
+  color: black;
   cursor: pointer;
   font-size: 1.25rem;
   font-weight: bold;
   padding: 0.75rem 2rem;
   text-transform: uppercase;
+  vertical-align: middle;
 }
 
 .button:hover,
 .button:focus {
-  background-color: white;
-  color: #2d862d;
+  background-color: black;
+  color: white;
+  outline: none;
 }
 
 .button:active {
   transform: translateY(1px);
+}
+
+.button svg {
+  color: #5abba7;
+  height: 1.3rem;
+  margin-right: 0.5rem;
+  position: relative;
+  top: -0.1rem;
+  vertical-align: middle;
+  width: 1.3rem;
 }
