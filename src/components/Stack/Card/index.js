@@ -1,22 +1,70 @@
-import { h } from 'preact';
+import { h, Fragment } from 'preact';
+import { useState } from 'preact/hooks';
 
-import { card, question as questionStyle, footer, meta, metaContainer, answer } from './style';
+import Button from '../Button';
 
-const Card = ({ question, description, index, length, children, ...rest }) => (
-	<div className={card} data-index={index} {...rest}>
-		<p className={questionStyle}>
-      <small class={metaContainer}>
-        <span className={meta}>Frage {index + 1} / {length}</span>
-      </small>
-      {question}
-    </p>
+import { card, question as questionStyle, footer, meta, metaContainer, answer as answerStyle } from './style';
 
-    <p className={answer}>{description}</p>
+const Card = ({ question, index, length, continueStack, setStackCredit, ...rest }) => {
+	const [questionText, yes, no, answer] = question;
+	const [hasAnswered, setHasAnswered] = useState(false);
 
-    <footer class={footer}>
-      {children}
-    </footer>
-	</div>
-);
+	const setAnswer = type => {
+		setHasAnswered(true);
+
+		if (type === 'yes') {
+			setStackCredit(yes);
+		}
+		else {
+			setStackCredit(no);
+		}
+	};
+
+	return (
+		<div className={card} {...rest}>
+			<p className={questionStyle}>
+				<small class={metaContainer}>
+					<span className={meta}>Frage {index + 1}/{length}</span>
+				</small>
+
+				{!hasAnswered && questionText}
+			</p>
+
+			{hasAnswered && (
+			  <p className={answerStyle}>{answer}</p>
+			)}
+
+			<footer class={footer}>
+				{hasAnswered === true ? (
+					<Button type="button" onClick={event => {
+						event.preventDefault();
+						continueStack();
+					}}
+					>
+              Next question
+					</Button>
+				) : (
+					<Fragment>
+						<Button type="button" onClick={event => {
+							event.preventDefault();
+							setAnswer('yes');
+						}}
+						>
+                Ja
+						</Button>
+
+						<Button type="button" onClick={event => {
+							event.preventDefault();
+							setAnswer('no');
+						}}
+						>
+                Nein
+						</Button>
+					</Fragment>
+				)}
+			</footer>
+		</div>
+	);
+};
 
 export default Card;
