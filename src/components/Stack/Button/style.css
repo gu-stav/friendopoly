@@ -1,12 +1,12 @@
 .button {
   background: transparent;
   border: 2px solid white;
-  border-radius: 0.25rem;
+  border-radius: 0.35rem;
   color: white;
   cursor: pointer;
   font-size: 1.25rem;
   font-weight: bold;
-  padding: 0.5rem 2.5rem;
+  padding: 0.75rem 2rem;
   text-transform: uppercase;
 }
 
@@ -14,4 +14,8 @@
 .button:focus {
   background-color: white;
   color: #2d862d;
+}
+
+.button:active {
+  transform: translateY(1px);
 }

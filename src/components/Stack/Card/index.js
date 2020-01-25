@@ -3,10 +3,10 @@ import { useState } from 'preact/hooks';
 
 import Button from '../Button';
 
-import { card, question as questionStyle, footer, meta, metaContainer, answer as answerStyle } from './style';
+import { card, question as questionStyle, footer, meta, metaContainer, answer as answerStyle, source as sourceStyle } from './style';
 
 const Card = ({ question, index, length, continueStack, setStackCredit, ...rest }) => {
-	const [questionText, yes, no, answer] = question;
+	const [questionText, yes, no, answer, source] = question;
 	const [hasAnswered, setHasAnswered] = useState(false);
 
 	const setAnswer = type => {
@@ -22,16 +22,24 @@ const Card = ({ question, index, length, continueStack, setStackCredit, ...rest 
 
 	return (
 		<div className={card} {...rest}>
-			<p className={questionStyle}>
-				<small class={metaContainer}>
-					<span className={meta}>Frage {index + 1}/{length}</span>
-				</small>
+			{!hasAnswered && (
+				<p className={questionStyle}>
+					<small class={metaContainer}>
+						<span className={meta}>Frage {index + 1}/{length}</span>
+					</small>
 
-				{!hasAnswered && questionText}
-			</p>
+					{questionText}
+				</p>
+			)}
 
 			{hasAnswered && (
-			  <p className={answerStyle}>{answer}</p>
+			  <p className={answerStyle}>
+					{answer}
+
+					{source && (
+						<small className={sourceStyle}>{source}</small>
+					)}
+				</p>
 			)}
 
 			<footer class={footer}>
