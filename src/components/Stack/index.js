@@ -33,10 +33,6 @@ const Stack = ({ cards = [] }) => {
 	return (
 		<Fragment>
 			<div className={stack}>
-				<footer>
-					Anzahl Freund*innen: {sum}
-				</footer>
-
 				<div class={container}>
 					{hasNext === true ? (
 						<Fragment>

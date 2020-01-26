@@ -3,9 +3,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
 }
 
 .container {
+  height: 30rem;
   position: relative;
-  width: 50%;
+  max-width: 47rem;
+  width: 100%;
 }

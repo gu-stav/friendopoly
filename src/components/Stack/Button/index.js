@@ -1,9 +1,10 @@
 import { h } from 'preact';
+import classnames from 'classnames';
 
-import { button } from './style.css';
+import { button, buttonThemeGreen } from './style.css';
 
-const Button = ({ children, ...rest }) => (
-	<button className={button} {...rest}>
+const Button = ({ theme, children, ...rest }) => (
+	<button className={classnames(button, { [buttonThemeGreen]: theme === 'green' })} {...rest}>
 		{children}
 	</button>
 );
