@@ -16,11 +16,18 @@
   height: 100%;
   left: 0;
   overflow: hidden;
-  padding: 4rem 3rem 2rem 3rem;
+  padding: 4rem 1.5rem 2rem 1.5rem;
   position: absolute;
   text-align: center;
   top: 0.75rem;
   width: 100%;
+}
+
+@media (min-width: 500px) {
+  .card {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
 }
 
 .card:nth-child(1) {
@@ -76,12 +83,24 @@
 
 .question {
   flex-direction: column;
-  font-size: 2.35rem;
+  font-size: 1.5rem;
   font-weight: 900;
   justify-content: center;
-  line-height: 1;
+  line-height: 1.45;
   margin-bottom: 2rem;
   margin-top: 0;
+}
+
+@media (min-width: 500px) {
+  .question {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 740px) {
+  .question {
+    font-size: 2.35rem;
+  }
 }
 
 .questionText {
@@ -91,7 +110,6 @@
   display: inline;
   font-family: monospace;
   font-weight: 700;
-  line-height: 1.45;
   padding: 0.2rem 1rem;
 }
 
@@ -101,18 +119,31 @@
   font-family: SabonNextRegular, Georgia, serif;
   flex: 1 0 auto;
   flex-direction: column;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   justify-content: center;
   text-align: left;
+}
+
+@media (min-width: 500px) {
+  .answer {
+    font-size: 1.5rem;
+  }
 }
 
 .source {
   display: inline-flex;
   font-family: SabonNextRegular, Georgia, serif;
-  font-size: 0.95rem;
+  font-size: 0.75rem;
   font-style: italic;
-  margin-top: 1.5rem;
+  margin-top: 0.75rem;
   padding: 0.25rem;
+}
+
+@media (min-width: 500px) {
+  .source {
+    font-size: 0.95rem;
+    margin-top: 1.5rem;
+  }
 }
 
 .source::before {
@@ -126,9 +157,14 @@
   background-color: transparent;
   justify-self: flex-end;
   margin-top: auto;
-  padding-top: 2rem;
 }
 
 .footer > * + * {
-  margin-left: 3rem;
+  margin-left: 1rem;
+}
+
+@media (min-width: 500px) {
+  .footer > * + * {
+    margin-left: 2rem;
+  }
 }
