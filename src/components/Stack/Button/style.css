@@ -1,21 +1,23 @@
 .button {
+  align-items: center;
   background: white;
   border: 0;
   border-radius: 0.35rem;
   color: black;
   cursor: pointer;
+  display: inline-flex;
   font-family: AkzidenzGroteskMedium, Arial, sans-serif;
   font-size: 1.15rem;
   font-weight: bold;
   letter-spacing: 0.05rem;
+  line-height: 1;
   padding: 0.75rem 2rem;
   text-transform: uppercase;
-  vertical-align: middle;
 }
 
 .buttonThemeGreen {
   background-color: #5abba7;
-  color: white;
+  color: black;
 }
 
 .button:hover,
@@ -26,7 +28,7 @@
 }
 
 .buttonThemeGreen:hover,
-.buttonThemeGreen:active {
+.buttonThemeGreen:focus {
   background-color: white;
   color: #5abba7;
 }
@@ -38,9 +40,23 @@
 .button svg {
   color: #5abba7;
   height: 1.3rem;
-  margin-right: 0.5rem;
-  position: relative;
-  top: -0.1rem;
-  vertical-align: middle;
+  line-height: 1;
   width: 1.3rem;
+}
+
+.button svg:first-child {
+  margin-right: 0.5rem;
+}
+
+.button svg:last-child {
+  margin-left: 0.5rem;
+}
+
+.buttonThemeGreen svg {
+  color: white;
+}
+
+.buttonThemeGreen:hover svg,
+.buttonThemeGreen:focus svg {
+  color: black;
 }

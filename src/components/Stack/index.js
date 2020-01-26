@@ -31,31 +31,29 @@ const Stack = ({ cards = [] }) => {
 	};
 
 	return (
-		<Fragment>
-			<div className={stack}>
-				<div class={container}>
-					{hasNext === true ? (
-						<Fragment>
-							{store.map(question => {
-								const index = cards.length - store.length;
+		<div className={stack}>
+			<div class={container}>
+				{hasNext === true ? (
+					<Fragment>
+						{store.map(question => {
+							const index = cards.length - store.length;
 
-								return (
-									<Card index={index} length={cards.length} key={`card-${question[0]}`} continueStack={continueStack} setStackCredit={setStackCredit} question={question} />
-								);
-							})}
-						</Fragment>
-					) : (
-						<Button type="button" onClick={event => {
-							event.preventDefault();
-							reset();
-						}}
-						>
-              Start over
-						</Button>
-					)}
-				</div>
+							return (
+								<Card index={index} length={cards.length} key={`card-${question[0]}`} continueStack={continueStack} setStackCredit={setStackCredit} question={question} />
+							);
+						})}
+					</Fragment>
+				) : (
+					<Button type="button" onClick={event => {
+						event.preventDefault();
+						reset();
+					}}
+					>
+						Start over
+					</Button>
+				)}
 			</div>
-		</Fragment>
+		</div>
 	);
 };
 
