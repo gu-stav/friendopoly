@@ -2,7 +2,7 @@
   background-color: black;
   background-image: repeating-linear-gradient(
     45deg,
-    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.1),
     transparent 1px,
     transparent 1px,
     transparent 10px
@@ -48,6 +48,13 @@
 
 .cardAsAnswer:nth-child(1) {
   background-color: black;
+  background-image: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.2),
+    transparent 1px,
+    transparent 1px,
+    transparent 10px
+  );
 }
 
 .meta {
@@ -63,12 +70,13 @@
   font-size: 0.95rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
+  margin-top: 1rem;
   text-transform: uppercase;
 }
 
 .question {
   flex-direction: column;
-  font-size: 2.5rem;
+  font-size: 2.35rem;
   font-weight: 900;
   justify-content: center;
   line-height: 1;

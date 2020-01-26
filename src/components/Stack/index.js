@@ -3,6 +3,7 @@ import { useState } from 'preact/hooks';
 
 import Button from './Button';
 import Card from './Card';
+import Meter from './Meter';
 
 import { container, stack } from './style.css';
 
@@ -32,6 +33,8 @@ const Stack = ({ cards = [] }) => {
 
 	return (
 		<div className={stack}>
+			<Meter count={sum} />
+
 			<div class={container}>
 				{hasNext === true ? (
 					<Fragment>
